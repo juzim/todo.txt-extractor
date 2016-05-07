@@ -7,24 +7,24 @@ python3 extractTasks.py FOLDERPATH
 
 Aruguments:
 -o output file name
--e (multiple) set file extensions, defaultsa to php, js and py
+-e (multiple) set file extensions, defaults to php, js and py
 -f parse single file
+-h show help
 
 Example:
-python3 extractTasks.py /home/thisisme/dev/kittensdeathmatch.com -e php -e js -o kittenstodo.txt
+python3 extractTasks.py /home/thisisme/dev/kittendeathmatch.com -e php -e js -o kittenstodo.txt
 
 Todo:
-- configurations for multiple projects
-  - todo.txt file name
-  - project path
-  - file extensions
-  - exclude folders
+- support for configurations files instead of arguments
 - support for more languages (find all comment variations)
 - allow existing tasks in file
 - update existing tasks
 - remove deleted tasks/move to "done" file
 - don't overwrite existing files
-- add tutorials for using folder watchers to pass in changed files
+- add examples for using folder watchers to pass in changed files
+- tests
+- clean up
+
 
 Things this won't do:
 - update task in source file when changed in txt

@@ -22,17 +22,16 @@ if args.todoFile:
 else:
     output = os.getcwd() + "/todo.txt"
 
-print(output)
-
 types = args.types
 
 if len(types) == 0:
     types = ['php', 'js', 'py']
 
-print(args.specificFile)
-
 if basePath == '.':
     basePath = os.getcwd()
+
+if not basePath.endswith('/'):
+    basePath += '/'
 
 files_grabbed = []
 
@@ -40,7 +39,7 @@ if args.specificFile:
     files_grabbed.append(args.specificFile)
 else:
     for types in types:
-        files_grabbed.extend(glob.glob(basePath + '/**/*.' + types, recursive=True))
+        files_grabbed.extend(glob.glob(basePath + '**/*.' + types, recursive=True))
 
 foundTasks = []
 
@@ -50,7 +49,7 @@ for path in files_grabbed:
             match = re.search("[/#] ?@?(todo|TODO):? (.*)", line)
             if match:
                 text = match.group(2).strip()
-                shortPath = re.sub(basePath + "/", '', path)
+                shortPath = re.sub(basePath, '', path)
                 task = text + " @" + shortPath + ":" + str(num)
                 foundTasks.append(task)
 
