@@ -1,6 +1,7 @@
 # todo.txt-extractor
-Finds and extracts all todos of a project and saves them as a [todo.txt](http://todotxt.com) file. Filename and linenumber are set as context
-Currently only php and js files are supported
+Finds and extracts all todos of a project and saves them as a [todo.txt](http://todotxt.com) file. Filename and linenumber are set as context.
+Currently all files that use "//" or "#" for comments are supported (I think), task have to start with todo/TODO/@todo/@TODO
+
 
 Usage:
 python3 extractTasks.py FOLDERPATH
